@@ -17,6 +17,6 @@ if __name__ == '__main__':
     fp = open(report_repash, "wb") # 保存报告文件
     print(fp)
     runner = HTMLTestRunner_cn.HTMLTestRunner(stream=fp,
-                                           title=title + '：',)
+                                           title=title + '：',verbosity=2)
     runner.run(case_all()) # 执行用例
     fp.close()
