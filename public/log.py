@@ -1,3 +1,4 @@
+# coding: utf-8
 import os,time,logging
 path=os.getcwd()
 class log_message():
@@ -5,7 +6,7 @@ class log_message():
 		title = u'注册测试'
 		day = time.strftime("%Y%m%d%H", time.localtime(time.time()))
 		pad = os.getcwd()
-		file_dir = '/Users/apple/PycharmProjects/atx/public'
+		file_dir = "C:\\Users\\Administrator\\PycharmProjects\\xiaobaiban\\public"
 		file = os.path.join(file_dir, (day + '.log'))
 		self.logger = logging.Logger(title)
 		self.logger.setLevel(logging.INFO)
