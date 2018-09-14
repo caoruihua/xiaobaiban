@@ -118,7 +118,7 @@ class TestXiaobaiban(unittest.TestCase):
         time.sleep(1)
         self.d(text=u"确定").click()
         time.sleep(4)
-        self.d.click(0.485, 0.829)
+        self.d.click(0.485, 0.829)  #点击确认通知按钮
         time.sleep(2)
         self.assertFalse(self.d(text=u"测试团队编辑资料测试").exists,"测试团队仍存在")
         time.sleep(2)
