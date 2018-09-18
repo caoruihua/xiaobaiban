@@ -103,6 +103,35 @@ class TestXiaobaiban(unittest.TestCase):
         self.d.press("back")
         time.sleep(1)
 
+    def test10MyFankui(self):
+        u'''测试我的反馈'''
+        self.d(text=u'我的').click()
+        time.sleep(1)
+        self.d(text=u'我要反馈').click()
+        time.sleep(1)
+        self.d(resourceId="com.esenyun.workline:id/et_feed_back_msg").click()
+        time.sleep(1)
+        self.d(resourceId="com.esenyun.workline:id/et_feed_back_msg").set_text("123")
+        time.sleep(1)
+        self.d(resourceId="com.esenyun.workline:id/iv_photo").click()
+        time.sleep(1)
+        self.d(resourceId="com.esenyun.workline:id/tv_dialog_item_name", text=u"从相册选择").click()
+        time.sleep(1)
+        self.d.click(0.088, 0.19)
+        time.sleep(1)
+        self.d(resourceId="com.esenyun.workline:id/done").click()
+        time.sleep(1)
+        self.d(resourceId="com.esenyun.workline:id/btn_feed_back_tel").click()
+        time.sleep(1)
+        self.d(resourceId="com.esenyun.workline:id/btn_feed_back_tel").set_text("15921879033")
+        time.sleep(1)
+        self.d.press('back')
+        time.sleep(1)
+        self.d(resourceId="com.esenyun.workline:id/btn_submit").click()
+        time.sleep(1)
+        self.assertTrue(self.d(text=u'我的反馈').exists,'返回失败')
+        time.sleep(1)
+
     def test06ChangePWD(self):
         u'''修改密码测试'''
         self.d(text=u"我的").click()
