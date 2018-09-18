@@ -35,6 +35,7 @@ class TestXiaobaiban(unittest.TestCase):
 
 
     def test01Jibenbianli(self):  # 进入客户体验进行菜单遍历
+        u'''进入客户体验进行遍历菜单'''
         self.log.info_log("开始遍历客户体验菜单")
         time.sleep(1)
         self.d(text="客户体验").click()

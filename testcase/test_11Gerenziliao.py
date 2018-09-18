@@ -33,6 +33,7 @@ class TestXiaobaiban(unittest.TestCase):
 
 
     def test01Chakanjuese(self): #查看角色
+        u'''查看角色'''
         self.d(text=u"我的").click()
         time.sleep(3)
         self.d(text=u"待完善").click()
@@ -41,6 +42,7 @@ class TestXiaobaiban(unittest.TestCase):
         time.sleep(3)
 
     def test02Canyudu(self):
+        u'''查看参与度'''
         self.d(text=u"我的").click()
         time.sleep(3)
         self.d(text=u"我的参与度").click()
@@ -52,6 +54,7 @@ class TestXiaobaiban(unittest.TestCase):
         self.d.click(0.912, 0.163) #进入历史参与度
 
     def test03Weixinmingpian(self):
+        u'''查看微信名片'''
         self.d(text=u"我的").click()
         time.sleep(3)
         self.d(text=u"待完善").click()
@@ -63,6 +66,7 @@ class TestXiaobaiban(unittest.TestCase):
 
 
     def test04Xiugaiziliao(self):
+        u'''修改个人资料'''
         self.d(text=u"我的").click()
         time.sleep(2)
         self.d(text=u"待完善").click()
@@ -77,6 +81,7 @@ class TestXiaobaiban(unittest.TestCase):
         time.sleep(1)
 
     def test05Shezhi(self):
+        u'''遍历个人资料菜单'''
         self.d(text=u"我的").click()
         time.sleep(2)
         self.d.click(0.916, 0.064)
@@ -99,6 +104,7 @@ class TestXiaobaiban(unittest.TestCase):
         time.sleep(1)
 
     def test06ChangePWD(self):
+        u'''修改密码测试'''
         self.d(text=u"我的").click()
         time.sleep(2)
         self.d.click(0.916, 0.064)

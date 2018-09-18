@@ -33,7 +33,8 @@ class TestXiaobaiban(unittest.TestCase):
 
 
 
-    def test01Qiehuanzuzhi(self): #生成个人模
+    def test01Qiehuanzuzhi(self):
+        u'''测试切换租户'''
         time.sleep(3)
         self.d(resourceId="com.esenyun.workline:id/title_iv_right01").click()
         time.sleep(1)

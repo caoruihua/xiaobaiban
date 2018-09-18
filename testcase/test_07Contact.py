@@ -37,6 +37,7 @@ class TestXiaobaiban(unittest.TestCase):
 
 
     def test01BianliContact(self):
+        u'''遍历通讯录测试'''
         self.log.info_log("遍历通讯录测试开始")
         time.sleep(3)
         self.d(text=u"团队").click()
@@ -62,6 +63,7 @@ class TestXiaobaiban(unittest.TestCase):
         self.log.info_log("遍历通讯录测试结束")
 
     def test02ChakanKapian(self):
+        u'''查看个人卡片测试'''
         self.log.info_log("查看卡片测试开始")
         time.sleep(3)
         self.d(text=u"团队").click()

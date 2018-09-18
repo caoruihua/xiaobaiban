@@ -32,13 +32,14 @@ class TestYituanma(unittest.TestCase):
         pass
 
     def test01MyDaiban(self):
+        u'''测试创建任务'''
         self.log.info_log("我的待办")
         time.sleep(3)
         self.d(text=u"我的任务").click()
         time.sleep(1)
         self.d(text=u"新建").click()
         time.sleep(1)
-        self.d.send_keys(u"123")
+        self.d.send_keys(u"测试GTD，勿删")
         time.sleep(1)
         self.d(resourceId="com.esenyun.workline:id/iv_pony_more").click()  # 点击设置按钮
         time.sleep(1)
@@ -69,6 +70,7 @@ class TestYituanma(unittest.TestCase):
         self.assertTrue(self.d(resourceId="com.esenyun.workline:id/title_iv_right").exists, "控件定位不到")
 
     def test02Dashboard(self):
+        u'''测试GTD数据看板'''
         self.log.info_log("进入数据看板")
         time.sleep(3)
         self.d(text=u"我的任务").click()
@@ -92,6 +94,7 @@ class TestYituanma(unittest.TestCase):
         self.assertTrue(self.d(resourceId="com.esenyun.workline:id/tv_remind_time_hint").exists, '测试失败')
 
     def test03MyPaifa(self):
+        u'''测试在我的派发创建任务'''
         self.log.info_log("进入我的派发")
         time.sleep(1)
         self.d(text=u"我的任务").click()
@@ -105,10 +108,11 @@ class TestYituanma(unittest.TestCase):
         self.d(text=u"确定").click()
         time.sleep(1)
         self.log.info_log("我的派发测试完成")
-        time.sleep(1)
+        time.sleep(2)
         self.assertTrue(self.d(text=u"新建").exists, "fail")
 
     def test04MyYanzheng(self):
+        u'''测试浏览我的验证'''
         time.sleep(3)
         self.log.info_log("进入我的验证")
         self.d(text=u"我的任务").click()
@@ -125,11 +129,47 @@ class TestYituanma(unittest.TestCase):
         time.sleep(1)
         self.assertTrue(self.d(text=u"新建").exists, "fail")
 
+    def test05_DeleteTask(self):
+        u'''测试删除我的派发任务'''
+        self.d(text=u'我的任务').click()
+        time.sleep(1)
+        self.d(text=u'我派发的').click()
+        time.sleep(1)
+        self.d(text=u'测试GTD，勿删').click()
+        time.sleep(1)
+        self.d(resourceId="com.esenyun.workline:id/title_iv_right").click()
+        time.sleep(1)
+        self.d(resourceId="com.esenyun.workline:id/tv_menu_title", text=u"删除任务").click()
+        time.sleep(1)
+        self.d(resourceId="com.esenyun.workline:id/md_buttonDefaultPositive").click()
+        time.sleep(1)
+        self.assertFalse(self.d(text='测试GTD，勿删').exists,"删除代办失败")
 
+    def test06_ReopenTask(self):
+        u'''测试重新开启任务'''
+        self.d(text=u'我的任务').click()
+        time.sleep(1)
+        self.d(text=u'我派发的').click()
+        time.sleep(1)
+        self.d(text=u'已关闭').click()
+        time.sleep(1)
+        self.d.long_click(0.337, 0.268,1) #长按重新开启的任务
+        time.sleep(1)
+        self.d(resourceId="com.esenyun.workline:id/md_title").click() #取消已关闭的任务
+        time.sleep(1)
+        self.assertTrue(self.d(text=u'冷藏库开辟市场参考',).exists,'任务重新开启失败')
+        time.sleep(1)
+        self.d(text=u'未完成').click()
+        time.sleep(1)
+        self.d.long_click(0.488, 0.249,0.5) #长按需要关闭的任务
+        time.sleep(1)
+        self.d(resourceId="com.esenyun.workline:id/md_title", text=u"关闭").click()
+        time.sleep(1)
 
-    def test05ZhuanRenwu(self):   #查看小白板数据
-        time.sleep(3)
+    def test07_ZhuanRenwu(self):   #查看小白板数据
+        u'''测试小白板转任务'''
         self.log.info_log("小白板转任务测试开始")
+        time.sleep(3)
         self.d(text=u"我的小白板").click()
         time.sleep(3)
         self.d(text=u"冷藏库开辟市场参考").click()
@@ -146,8 +186,8 @@ class TestYituanma(unittest.TestCase):
         time.sleep(1)
         self.log.info_log("小白板转任务测试完成")
 
-
-    def test06Dianzan(self):
+    def test08_Dianzan(self):
+        u'''测试小白板点赞与通知'''
         time.sleep(3)
         self.d(text=u"我的小白板").click()
         time.sleep(3)
@@ -163,8 +203,8 @@ class TestYituanma(unittest.TestCase):
         time.sleep(1)
         self.log.info_log("点赞测试完成")
 
-
-    def test07CreateMOban(self): #生成个人模
+    def test09_CreateMoban(self): #生成个人模板
+        u'''测试生成小白板模板'''
         self.log.info_log("测试生成模板开始")
         time.sleep(3)
         self.d(text=u"我的小白板").click()

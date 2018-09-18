@@ -6,7 +6,7 @@ class log_message():
 		title = u'注册测试'
 		day = time.strftime("%Y%m%d%H", time.localtime(time.time()))
 		pad = os.getcwd()
-		file_dir = "C:\\Users\\Administrator\\PycharmProjects\\xiaobaiban\\public"
+		file_dir = os.path.dirname(os.path.abspath('.')) + '/xiaobaiban2/public/'
 		file = os.path.join(file_dir, (day + '.log'))
 		self.logger = logging.Logger(title)
 		self.logger.setLevel(logging.INFO)

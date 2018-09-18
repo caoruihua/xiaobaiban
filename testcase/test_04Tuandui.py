@@ -51,6 +51,7 @@ class TestXiaobaiban(unittest.TestCase):
 
 
     def test03CreatTuandui(self):
+        u'''创建团队测试'''
         self.d(text=u"团队").click()
         time.sleep(1)
         self.d(text=u"新建").click() #开始新建团队
@@ -78,6 +79,7 @@ class TestXiaobaiban(unittest.TestCase):
 
 
     def test04BianJiTeam(self):
+        u'''测试认证为部门'''
         self.d(text=u"小白板", className="android.widget.TextView", instance=2).click()
         time.sleep(1)
         self.d.press("back")
@@ -109,6 +111,7 @@ class TestXiaobaiban(unittest.TestCase):
 
 
     def test05DeleteTeam(self):
+        u'''删除团队测试'''
         self.d(text=u"团队").click()
         time.sleep(1)
         self.d(text=u"测试团队编辑资料测试").click()

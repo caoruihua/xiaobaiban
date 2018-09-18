@@ -32,6 +32,7 @@ class TestXiaobaiban(unittest.TestCase):
         pass
 
     def test01InterXiaoBaiBan(self):   #查看小白板数据
+        u'''查看小白板数据看板'''
         time.sleep(3)
         self.d(text=u"我的小白板").click()
         time.sleep(1)
@@ -61,6 +62,7 @@ class TestXiaobaiban(unittest.TestCase):
         time.sleep(1)
 
     def test02Draft(self):
+        u'''进入结论草稿测试'''
         self.d(text=u"我的小白板").click()
         time.sleep(1)
         self.d(resourceId="com.esenyun.workline:id/title_iv_right02").click()  # 点击选项按钮
@@ -71,6 +73,7 @@ class TestXiaobaiban(unittest.TestCase):
 
 
     def test03ShanchuPinglun(self):
+        u'''发表评论与删除评论测试'''
         self.log.info_log("查看评论测试开始")
         time.sleep(3)
         self.d(text=u"我的小白板").click()
@@ -95,6 +98,7 @@ class TestXiaobaiban(unittest.TestCase):
 
 
     def test04RizhiAndShenpi(self):
+        u'''测试审批和查看小白板日志'''
         self.log.info_log("查看小白板日志测试")
         time.sleep(3)
         self.d(text=u"我的小白板").click()
