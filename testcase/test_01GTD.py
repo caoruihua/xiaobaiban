@@ -3,7 +3,7 @@ import unittest
 import uiautomator2 as u2
 import time
 import uiautomator2.ext.htmlreport as htmlreport
-from public import log
+from public import log,cofig
 
 
 class TestYituanma(unittest.TestCase):
@@ -40,7 +40,7 @@ class TestYituanma(unittest.TestCase):
         time.sleep(1)
         self.d.send_keys(u"123")
         time.sleep(1)
-        self.d(resourceId="com.esenyun.workline:id/iv_pony_verifier").click()  # 点击设置按钮
+        self.d(resourceId="com.esenyun.workline:id/iv_pony_more").click()  # 点击设置按钮
         time.sleep(1)
         self.d(resourceId="com.esenyun.workline:id/s_remind_switch").click()  # 选择指定时间提醒我
         time.sleep(1)
@@ -58,7 +58,7 @@ class TestYituanma(unittest.TestCase):
         time.sleep(1)
         self.d(resourceId="com.esenyun.workline:id/tv_executor").click()
         time.sleep(1)
-        self.d(resourceId="com.esenyun.workline:id/contact_row_name", text=u"曹瑞华0001").click()
+        self.d(resourceId="com.esenyun.workline:id/tv_department", text=u"部部全").click()
         time.sleep(1)
         self.d(resourceId="com.esenyun.workline:id/tv_confirm").click()
         time.sleep(1)
