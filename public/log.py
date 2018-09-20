@@ -1,18 +1,18 @@
 # coding: utf-8
-import os,time,logging
+import os,time,logging,sys
 path=os.getcwd()
 class log_message():
 	def __init__(self):
 		title = u'注册测试'
 		day = time.strftime("%Y%m%d%H", time.localtime(time.time()))
 		pad = os.getcwd()
-		file_dir = os.path.dirname(os.path.abspath('.')) + '/xiaobaiban2/public/'
+		file_dir = 'C:\\Users\Administrator\PycharmProjects\\xiaobaiban2'
 		file = os.path.join(file_dir, (day + '.log'))
 		self.logger = logging.Logger(title)
 		self.logger.setLevel(logging.INFO)
 		self.logfile = logging.FileHandler(file)
 		self.logfile.setLevel(logging.INFO)
-		self.control = logging.StreamHandler()
+		self.control = logging.StreamHandler(sys.stdout)
 		self.control.setLevel(logging.INFO)
 		self.formater = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 		self.logfile.setFormatter(self.formater)

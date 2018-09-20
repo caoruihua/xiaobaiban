@@ -13,10 +13,10 @@ class TestXiaobaiban(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
 
-        cls.u = u2.connect_usb(cofig.ID)
+        cls.u = u2.connect_usb()
         cls.u.healthcheck()  # 解锁屏幕并启动uiautomator服务
-        hrp = htmlreport.HTMLReport(cls.u, 'report')
-        hrp.patch_click()
+        #hrp = htmlreport.HTMLReport(cls.u, 'report')
+        #hrp.patch_click()
         cls.u.make_toast("测试开始")
         # cls.u.disable_popups(True)  # 允许自动处理弹出框
 

@@ -103,7 +103,7 @@ class TestXiaobaiban(unittest.TestCase):
         self.d.press("back")
         time.sleep(1)
 
-    def test10MyFankui(self):
+    def test06MyFankui(self):
         u'''测试我的反馈'''
         self.d(text=u'我的').click()
         time.sleep(1)
@@ -132,7 +132,7 @@ class TestXiaobaiban(unittest.TestCase):
         self.assertTrue(self.d(text=u'我的反馈').exists,'返回失败')
         time.sleep(1)
 
-    def test06ChangePWD(self):
+    def test07ChangePWD(self):
         u'''修改密码测试'''
         self.d(text=u"我的").click()
         time.sleep(2)
