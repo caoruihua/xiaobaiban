@@ -45,7 +45,7 @@ class TestYituanma(unittest.TestCase):
         time.sleep(1)
         self.d(resourceId="com.esenyun.workline:id/s_remind_switch").click()  # 选择指定时间提醒我
         time.sleep(1)
-        self.d(description=u"27 九月 2018").click()  # 选择日期
+        self.d(description=u"27 十一月 2018").click()  # 选择日期
         time.sleep(1)
         self.d(resourceId="com.esenyun.workline:id/mdtp_ok").click()
         time.sleep(1)
@@ -85,7 +85,7 @@ class TestYituanma(unittest.TestCase):
         time.sleep(2)
         self.d(resourceId="com.esenyun.workline:id/title_iv_right02").click()
         time.sleep(2)
-        self.d(resourceId="com.esenyun.workline:id/tv_remind_time_hint").click()
+        self.d(resourceId="com.esenyun.workline:id/s_remind_switch").click()
         time.sleep(2)
         self.d(text=u"截止前15分钟").click()
         time.sleep(1)
@@ -103,7 +103,7 @@ class TestYituanma(unittest.TestCase):
         time.sleep(1)
         self.d(text=u"新建").click()
         time.sleep(1)
-        self.d.send_keys(u"321")
+        self.d.send_keys(u"测试GTD，勿删")
         time.sleep(1)
         self.d(text=u"确定").click()
         time.sleep(1)
