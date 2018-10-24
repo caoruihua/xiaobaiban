@@ -4,12 +4,13 @@ import uiautomator2 as u2
 import time
 import uiautomator2.ext.htmlreport as htmlreport
 import logging
+from public import cofig
 
 
 class TestXiaobaiban(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.u = u2.connect_usb()
+        cls.u = u2.connect_usb(cofig.ID)
         cls.u.healthcheck()  # 解锁屏幕并启动uiautomator服务
         #hrp = htmlreport.HTMLReport(cls.u, 'report')
         #hrp.patch_click()

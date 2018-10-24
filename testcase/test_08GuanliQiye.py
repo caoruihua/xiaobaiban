@@ -5,14 +5,13 @@ __author__ = 'Administrator'
 import unittest
 import uiautomator2 as u2
 import time
-from atx.ext.chromedriver import ChromeDriver
 from public import cofig
 
 
 class TestXiaobaiban(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.u = u2.connect(cofig.ip1)
+        cls.u = u2.connect(cofig.ID)
         cls.u.healthcheck()  # 解锁屏幕并启动uiautomator服务
         #hrp = htmlreport.HTMLReport(cls.u, 'report')
         #hrp.patch_click()
